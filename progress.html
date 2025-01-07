@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - Venty</title>
+    <link rel="icon" type="image/png" href="v.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: stretch; /* Ensures all items have the same height */
+        }
+
+        .timeline-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 60px;
+            width: calc(33.33% - 120px);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .timeline-stage:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            /* background-color: white; */
+            top: 50%;
+            right: -60px;
+            transform: translateY(-50%);
+        }
+
+        .timeline-stage:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 10px;
+            border-color: transparent transparent transparent white;
+            top: 50%;
+            right: -70px;
+            transform: translateY(-50%);
+        }
+
+        .timeline-stage:nth-child(3n)::after,
+        .timeline-stage:nth-child(3n)::before {
+            display: none;
+        }
+
+        .timeline-image {
+            width: 100%;
+            max-width: 300px;
+            /* background-color: white; */
+            /* border: 2px solid white; */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Makes the images stretch to fill the available height */
+        }
+
+        .timeline-image img, .timeline-image iframe {
+            width: 100%;
+            height: auto;
+        }
+
+        .timeline-caption {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .btn:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        .masthead {
+            width: 100%;
+            padding: 10px 20px;
+            border-top: 1px solid white;
+            text-align: left;
+            box-sizing: border-box;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Progress</h1>
+        <div class="timeline">
+            <div class="timeline-stage">
+                <div class="timeline-image">
+                    <img src="sketches.jpg" alt="Prototype">
+                </div>
+                <div class="timeline-caption">
+                    <p>Initial Sketches</p>
+                </div>
+            </div>
+            <div class="timeline-stage">
+                <div class="timeline-image">
+                    <iframe src="https://www.youtube.com/embed/Cjasy9yqzNs?si=oQBlD_KAY0OEG3PT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="timeline-caption">
+                    <p>Initial Testing</p>
+                </div>
+            </div>
+            <div class="timeline-stage">
+                <div class="timeline-image">
+                    <img src="product.png" alt="Design Finalized">
+                </div>
+                <div class="timeline-caption">
+                    <p>CAD Model Created</p>
+                </div>
+            </div>
+            <div class="timeline-stage">
+                <div class="timeline-image">
+                    <img src="website.png" alt="Launch">
+                </div>
+                <div class="timeline-caption">
+                    <p>Website Created</p>
+                </div>
+            </div>
+            <div class="timeline-stage">
+                <div class="timeline-image">
+                    <img src="first print.JPG" alt="Launch">
+                </div>
+                <div class="timeline-caption">
+                    <p>First Prototype Part Printed</p>
+                </div>
+            </div>
+            <div class="timeline-stage">
+                <div class="timeline-image">
+                    <img src="second print.jpg" alt="User Feedback">
+                </div>
+                <div class="timeline-caption">
+                    <p>Second Prototype Part Printed and Assembled</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="btn" onclick="location.href='index.html'">Back to Home</button>
+    </div>
+    <div class="masthead">
+        Matthew Short - mshort25@uwo.ca
+    </div>
+</body>
+</html>
